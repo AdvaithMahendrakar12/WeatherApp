@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body {
+    transition: background-image 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.weather-container {
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease-in-out;
+}
+
+body.loading .weather-container {
+    opacity: 0.5;
+}
+</style>
+
+<body class="m-0 p-0 min-h-screen bg-cover bg-center bg-no-repeat transition-all duration-500">
+    <div class="flex flex-col min-h-screen backdrop-blur-sm">
+        <div class="flex-grow flex items-center justify-center">
+            <div class="weather-container border-2 border-white p-8 max-w-sm min-w-[300px] break-words rounded-xl bg-white bg-opacity-30 shadow-lg">
+                <div class="temperature text-4xl font-bold mb-4 text-center text-white">17 °</div>
+                <div class="location-info mb-4 text-center">
+                    <p class="location text-xl font-semibold text-white">Local</p>
+                    <span class="time text-sm text-gray-200">11:01 - Saturday 2024-08-24</span>
+                </div>
+                <div class="weather-condition flex items-center justify-center">
+                    <img class="condition-icon w-10 h-10 mr-2" src="placeholder.png" alt="Condition">
+                    <span class="condition-text text-lg text-white">Condition</span>
+                </div>
+            </div>
+        </div>
+        <nav class="search-bar flex justify-center items-center mb-10 mt-3">
+            <input class="search-input w-64 p-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white bg-opacity-70" type="text" placeholder="Search Location">
+            <button class="search-button bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Search</button>
+        </nav>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
